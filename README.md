@@ -2,12 +2,11 @@
 
 Accept Bitcoin and 50+ Cryptocurrencies on your WooCommerce store.
 
-Read the plugin installation instructions below to get started with CoinGate Cryptocurrency payment gateway on your shop. Accept Bitcoin, Litecoin, Ethereum and other coins hassle-free - and receive settlements in Bitcoin or in Euros to your bank.
-Full setup guide with screenshots is also available on our blog: <https://blog.coingate.com/2017/05/install-woocommerce-bitcoin-plugin/>
+Read the plugin installation instructions below to get started with CoinGate Cryptocurrency payment gateway on your shop. Accept Bitcoin, EOS, Litecoin, Ethereum and other coins hassle-free - and receive settlements in Bitcoin or in Euros to your bank.
 
 ## Install
 
-Sign up for CoinGate account at <https://coingate.com> for production and <https://sandbox.coingate.com> for testing (sandbox) environment.
+Sign up for CoinGate account at <https://mixin.one> for production 
 
 Please take note, that for "Test" mode you **must** generate separate API credentials on <https://sandbox.coingate.com>. API credentials generated on <https://coingate.com> will **not** work for "Test" mode.
 
