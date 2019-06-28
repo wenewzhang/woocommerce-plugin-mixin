@@ -1,4 +1,4 @@
-# WooCommerce CoinGate Plugin
+# WooCommerce Mixin Plugin
 
 Accept Bitcoin and 50+ Cryptocurrencies on your WooCommerce store.
 
