@@ -22,9 +22,9 @@ function MixinNetwork_init()
         return;
     };
 
-    define('PLUGIN_DIR', plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__)) . '/');
+    define('PLUGIN_DIR_MX', plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__)) . '/');
 
-    require_once(__DIR__ . '/lib/MixinNetwork/init.php');
+    require_once(__DIR__ . '/lib/mixinnetwork/init.php');
 
     class WC_Gateway_MixinNetwork extends WC_Payment_Gateway
     {
@@ -35,7 +35,7 @@ function MixinNetwork_init()
             $this->id = 'MixinNetwork';
             $this->has_fields = false;
             $this->method_title = 'MixinNetwork';
-            $this->icon = apply_filters('woocommerce_MixinNetwork_icon', PLUGIN_DIR . 'assets/bitcoin.png');
+            $this->icon = apply_filters('woocommerce_MixinNetwork_icon', PLUGIN_DIR_MX . 'assets/bitcoin.png');
 
             $this->init_form_fields();
             $this->init_settings();
