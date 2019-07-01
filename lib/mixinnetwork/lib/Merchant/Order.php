@@ -1,10 +1,10 @@
 <?php
-namespace CoinGate\Merchant;
+namespace MixinNetwork\Merchant;
 
-use CoinGate\CoinGate;
-use CoinGate\Merchant;
-use CoinGate\OrderIsNotValid;
-use CoinGate\OrderNotFound;
+use MixinNetwork\MixinNetwork;
+use MixinNetwork\Merchant;
+use MixinNetwork\OrderIsNotValid;
+use MixinNetwork\OrderNotFound;
 
 class Order extends Merchant
 {
@@ -36,7 +36,7 @@ class Order extends Merchant
 
     public static function findOrFail($orderId, $options = array(), $authentication = array())
     {
-        $order = CoinGate::request('/orders/' . $orderId, 'GET', array(), $authentication);
+        $order = MixinNetwork::request('/orders/' . $orderId, 'GET', array(), $authentication);
 
         return new self($order);
     }
@@ -52,7 +52,7 @@ class Order extends Merchant
 
     public static function createOrFail($params, $options = array(), $authentication = array())
     {
-        $order = CoinGate::request('/orders', 'POST', $params, $authentication);
+        $order = MixinNetwork::request('/orders', 'POST', $params, $authentication);
 
         return new self($order);
     }

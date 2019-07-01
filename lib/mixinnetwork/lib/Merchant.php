@@ -1,4 +1,4 @@
 <?php
-namespace CoinGate;
+namespace MixinNetwork;
 
 class Merchant {}

@@ -1,10 +1,10 @@
 <?php
-namespace CoinGate;
+namespace MixinNetwork;
 
-class CoinGate
+class MixinNetwork
 {
     const VERSION           = '3.0.0';
-    const USER_AGENT_ORIGIN = 'CoinGate PHP Library';
+    const USER_AGENT_ORIGIN = 'MixinNetwork PHP Library';
 
     public static $auth_token  = '';
     public static $environment = 'live';
@@ -43,17 +43,17 @@ class CoinGate
 
         # Check if credentials was passed
         if (empty($auth_token))
-            \CoinGate\Exception::throwException(400, array('reason' => 'AuthTokenMissing'));
+            \MixinNetwork\Exception::throwException(400, array('reason' => 'AuthTokenMissing'));
 
         # Check if right environment passed
         $environments = array('live', 'sandbox');
 
         if (!in_array($environment, $environments)) {
             $availableEnvironments = join(', ', $environments);
-            \CoinGate\Exception::throwException(400, array('reason' => 'BadEnvironment', 'message' => "Environment does not exist. Available environments: $availableEnvironments"));
+            \MixinNetwork\Exception::throwException(400, array('reason' => 'BadEnvironment', 'message' => "Environment does not exist. Available environments: $availableEnvironments"));
         }
 
-        $url       = ($environment === 'sandbox' ? 'https://api-sandbox.coingate.com/v2' : 'https://api.coingate.com/v2') . $url;
+        $url       = ($environment === 'sandbox' ? 'https://api-sandbox.MixinNetwork.com/v2' : 'https://api.MixinNetwork.com/v2') . $url;
         $headers   = array();
         $headers[] = 'Authorization: Token ' . $auth_token;
         $curl      = curl_init();
@@ -80,6 +80,6 @@ class CoinGate
         if ($http_status === 200)
             return $response;
         else
-            \CoinGate\Exception::throwException($http_status, $response);
+            \MixinNetwork\Exception::throwException($http_status, $response);
     }
 }

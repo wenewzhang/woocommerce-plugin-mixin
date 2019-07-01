@@ -1,5 +1,5 @@
 <?php
-namespace CoinGate;
+namespace MixinNetwork;
 
 class APIError extends \Exception {}
 

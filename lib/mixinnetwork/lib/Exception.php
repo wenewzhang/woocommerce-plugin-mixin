@@ -1,5 +1,5 @@
 <?php
-namespace CoinGate;
+namespace MixinNetwork;
 
 class Exception
 {
@@ -57,4 +57,3 @@ class Exception
         }
     }
 }
-

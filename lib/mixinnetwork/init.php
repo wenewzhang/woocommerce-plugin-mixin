@@ -1,7 +1,7 @@
 <?php
 
-// CoinGate Class
-require(dirname(__FILE__) . '/lib/CoinGate.php');
+// MixinNetwork Class
+require(dirname(__FILE__) . '/lib/MixinNetwork.php');
 
 // Exception Class
 require(dirname(__FILE__) . '/lib/ApiError.php');
