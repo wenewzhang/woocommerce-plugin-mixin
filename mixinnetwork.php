@@ -18,6 +18,7 @@ define('MixinNetwork_WOOCOMMERCE_VERSION', '1.2.3');
 
 function MixinNetwork_init()
 {
+    error_log("MixinNetwork_init");
     if (!class_exists('WC_Payment_Gateway')) {
         return;
     };
