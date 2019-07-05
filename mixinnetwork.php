@@ -18,8 +18,8 @@ define('MixinNetwork_WOOCOMMERCE_VERSION', '1.2.3');
 
 function MixinNetwork_init()
 {
-    error_log("MixinNetwork_init");
-    file_put_contents(WP_DEBUG_LOG, "abc\n", FILE_APPEND | LOCK_EX);
+    // error_log("MixinNetwork_init");
+    // file_put_contents(WP_DEBUG_LOG, "abc\n", FILE_APPEND | LOCK_EX);
     if (!class_exists('WC_Payment_Gateway')) {
         return;
     };
@@ -71,6 +71,7 @@ function MixinNetwork_init()
 
         public function init_form_fields()
         {
+            error_log("mixinnetwork init_form_fields");
             $this->form_fields = array(
                 'enabled' => array(
                     'title' => __('Enable MixinNetwork', 'woocommerce'),
