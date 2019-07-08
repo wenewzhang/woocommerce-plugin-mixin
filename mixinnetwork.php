@@ -32,6 +32,7 @@ function MixinNetwork_init()
     {
         public function __construct()
         {
+            error_log("WC_Gateway_MixinNetwork __construct");
             global $woocommerce;
 
             $this->id = 'MixinNetwork';
@@ -58,6 +59,7 @@ function MixinNetwork_init()
 
         public function admin_options()
         {
+            error_log("mx admin_options");
             ?>
             <h3><?php _e('MixinNetwork', 'woothemes'); ?></h3>
             <p><?php _e('Accept Bitcoin through the MixinNetwork.com and receive payments in euros and US dollars.<br>
@@ -135,6 +137,7 @@ function MixinNetwork_init()
 
         public function process_payment($order_id)
         {
+            error_log("mx process_payment");
             global $woocommerce, $page, $paged;
             $order = new WC_Order($order_id);
 
@@ -182,6 +185,7 @@ function MixinNetwork_init()
 
         public function payment_callback()
         {
+            error_log("mx payment_callback");
             $request = $_REQUEST;
 
             global $woocommerce;
@@ -255,6 +259,7 @@ function MixinNetwork_init()
 
         public function generate_order_statuses_html()
         {
+            error_log("mx generate_order_statuses_html");
             ob_start();
 
             $cgStatuses = $this->cgOrderStatuses();
@@ -305,6 +310,7 @@ function MixinNetwork_init()
 
         public function validate_order_statuses_field()
         {
+            error_log("mx validate_order_statuses_field");
             $orderStatuses = $this->get_option('order_statuses');
 
             if (isset($_POST[$this->plugin_id . $this->id . '_order_statuses']))
@@ -315,6 +321,7 @@ function MixinNetwork_init()
 
         public function save_order_statuses()
         {
+            error_log("mx save_order_statuses");
             $cgOrderStatuses = $this->cgOrderStatuses();
             $wcStatuses = wc_get_order_statuses();
 
@@ -339,11 +346,13 @@ function MixinNetwork_init()
 
         private function cgOrderStatuses()
         {
+            error_log("mx cgOrderStatuses");
             return array('paid' => 'Paid', 'invalid' => 'Invalid', 'expired' => 'Expired', 'canceled' => 'Canceled', 'refunded' => 'Refunded');
         }
 
         private function init_MixinNetwork()
         {
+            error_log("mx init_MixinNetwork");
             \MixinNetwork\MixinNetwork::config(
                 array(
                     'auth_token'    => (empty($this->api_auth_token) ? $this->api_secret : $this->api_auth_token),
@@ -356,6 +365,7 @@ function MixinNetwork_init()
 
     function add_MixinNetwork_gateway($methods)
     {
+        error_log("mx add_MixinNetwork_gateway");
         $methods[] = 'WC_Gateway_MixinNetwork';
 
         return $methods;
